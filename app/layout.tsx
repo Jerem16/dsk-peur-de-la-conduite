@@ -42,7 +42,11 @@ export default function RootLayout({
     return (
         <html lang="fr-FR">
             <head>
-                <link rel="preload" href="/img/retroviseur.svg" as="image" />
+                <link
+                    rel="preload"
+                    href="/dsk-peur-de-la-conduite/retroviseur.svg"
+                    as="image"
+                />
                 <link
                     rel="alternate"
                     media="only screen and (max-width: 640px)"
@@ -55,7 +59,11 @@ export default function RootLayout({
                     href="/css/desktopDefer.css"
                     fetchPriority="low"
                 />
-                <link rel="preload" href="/img/retroviseur.svg" as="image" />
+                <link
+                    rel="preload"
+                    href="/dsk-peur-de-la-conduite/retroviseur.svg"
+                    as="image"
+                />
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{
@@ -64,7 +72,9 @@ export default function RootLayout({
                             "@type": "ProfessionalService",
                             "@id": "https://www.peur-de-la-conduite.fr/",
                             name: "Peur de la conduite - Coaching Auto",
-                            image: ["/img/about/avatar.webp"],
+                            image: [
+                                "/dsk-peur-de-la-conduite/about/avatar.webp",
+                            ],
                             url: "https://www.peur-de-la-conduite.fr/",
                             telephone: "+33 6 74 25 91 81",
                             email: "contact.peurdelaconduite@gmail.com",

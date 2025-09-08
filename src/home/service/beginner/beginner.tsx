@@ -11,7 +11,7 @@ const Beginner = () => {
             <div className="card_bg">
                 <Image
                     className="road-confirmed"
-                    src="/img/services/road-Beginner.svg"
+                    src="/dsk-peur-de-la-conduite/services/road-Beginner.svg"
                     alt="Logo background"
                     width={1706}
                     height={2957}
@@ -37,7 +37,7 @@ const Beginner = () => {
                     <div className="aside-bg">
                         <Image
                             className="srv-aside-bg"
-                            src="/img/services/aside-bg.svg"
+                            src="/dsk-peur-de-la-conduite/services/aside-bg.svg"
                             alt="Logo background"
                             width={360}
                             height={860}
@@ -57,7 +57,7 @@ const Beginner = () => {
                         <div className="flx-c icon-description">
                             <Image
                                 className="srv-aside-bg"
-                                src="/img/services/Trophy.svg"
+                                src="/dsk-peur-de-la-conduite/services/Trophy.svg"
                                 alt={`Logo Trophy`}
                                 width={1145}
                                 height={1145}

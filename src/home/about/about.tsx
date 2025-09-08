@@ -7,7 +7,7 @@ const About = () => {
         <div className="about content-wrapper flx-c">
             <div className="ab-img_info">
                 <Image
-                    src="/img/about/INFO.svg"
+                    src="/dsk-peur-de-la-conduite/about/INFO.svg"
                     alt="Info Icon"
                     width="540"
                     height="540"
@@ -23,7 +23,7 @@ const About = () => {
                         </h3>
                         <Image
                             className="ab-img_head"
-                            src="/img/about/avatar.webp"
+                            src="/dsk-peur-de-la-conduite/about/avatar.webp"
                             alt={`Avatar de ${content.cardIdentity.firstName}`}
                             width={225}
                             height={225}

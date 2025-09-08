@@ -14,24 +14,24 @@ export const contactAnnouncements: ContactAnnouncement[] = [
 
 export const contactDetails: ContactDetail[] = [
     {
-        svg: "/img/contact/icon/clock.svg",
+        svg: "/dsk-peur-de-la-conduite/contact/icon/clock.svg",
         text: "Du Lundi au Dimanche, 07h - 20h",
         alt: "Horaires",
     },
     {
-        svg: "/img/contact/icon/phone.svg",
+        svg: "/dsk-peur-de-la-conduite/contact/icon/phone.svg",
         text: "+33 6 74 25 91 81",
         link: "tel:+33674259181",
         alt: "Téléphonne",
     },
     {
-        svg: "/img/contact/icon/mail.svg",
+        svg: "/dsk-peur-de-la-conduite/contact/icon/mail.svg",
         text: "Envoyez-moi un mail",
         link: "mailto:contact.peurdelaconduite@gmail.com",
         alt: "Mail",
     },
     {
-        svg: "/img/contact/icon/location.svg",
+        svg: "/dsk-peur-de-la-conduite/contact/icon/location.svg",
         text: "17 Allée Didier Daurat, 76620 LE HAVRE",
         link: "https://maps.google.com/?q=17+Allée+Didier+Daurat,+76620+LE+HAVRE",
         alt: "Addresse",

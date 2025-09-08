@@ -19,7 +19,7 @@ const Services: React.FC = () => {
                     <div className="card_header flx-c">
                         <Image
                             className="srv-img_typo"
-                            src="/img/services/TYPO-LOGO.svg"
+                            src="/dsk-peur-de-la-conduite/services/TYPO-LOGO.svg"
                             alt="Image cours de conduite"
                             width={360}
                             height={83}
@@ -28,7 +28,7 @@ const Services: React.FC = () => {
                         />
                         <Image
                             className="srv-img_lesson"
-                            src="/img/services/cours-de-conduite.webp"
+                            src="/dsk-peur-de-la-conduite/services/cours-de-conduite.webp"
                             alt="Image cours de conduite"
                             width={288}
                             height={265}

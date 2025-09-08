@@ -27,7 +27,7 @@ export const metadata: Metadata = {
         type: "website",
         images: [
             {
-                url: "/img/about/avatar.webp",
+                url: "/dsk-peur-de-la-conduite/about/avatar.webp",
                 width: 225,
                 height: 225,
                 alt: "Mounir Bouakkaz - Coaching conduite au Havre",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     icons: {
         icon: [
             {
-                url: "/img/favicon/logo.svg",
+                url: "/dsk-peur-de-la-conduite/favicon/logo.svg",
                 type: "image/svg+xml",
             },
         ],
@@ -84,7 +84,7 @@ export default function Page() {
                                     <div className="srvP_bull-card">
                                         <div className="bull-bd">
                                             <img
-                                                src="/img/utils/bulle-bd.svg"
+                                                src="/dsk-peur-de-la-conduite/utils/bulle-bd.svg"
                                                 alt={service.imgAlt}
                                             />
                                         </div>

@@ -1,6 +1,6 @@
 // next.config.ts
 const isProd = process.env.NODE_ENV === "production";
-const repo = "dsk-peur-de-conduite"; // ← ton nom de repo
+const repo = "dsk-peur-de-la-conduite"; // ← ton nom de repo
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
