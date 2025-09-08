@@ -31,6 +31,15 @@ export const handleScrollClick = (targetId: string, offset = 0) => {
         scrollTimeEvent(currentTime, start, end, duration, startTime);
     });
 };
+// fnScrollUtils.ts (ou un petit utils dédié)
+const SCROLL_INTENT_KEY = "__SCROLL_INTENT__";
+
+function setScrollIntent(targetHash: string, offset = 0) {
+    const id = targetHash.replace(/^#/, "");
+    sessionStorage.setItem(SCROLL_INTENT_KEY, JSON.stringify({ id, offset }));
+}
+
+
 
 /*-------------------------------------------------------*/
 
@@ -63,6 +72,7 @@ export const handleNavClick = (
         targetHash,
         currentHash,
         updateRoute,
+        handleScrollClick,
         scrollOffset,
     });
 
@@ -77,40 +87,39 @@ export const handleNavClick = (
     });
 };
 
-function ifNav({ currentPath, targetPath, targetHash, currentHash, updateRoute }: NavParams): void {
+function ifNav({
+    currentPath,
+    targetPath,
+    targetHash,
+    scrollOffset,
+    updateRoute,
+}: NavParams): void {
     if (currentPath !== targetPath) {
-        updateRoute(targetPath);
-
-        if (targetHash === undefined) {
-            return;
+        // S’il y a une ancre cible, mémorise l’offset du sous-item
+        if (typeof targetHash !== "undefined") {
+            setScrollIntent(targetHash, scrollOffset ?? 0);
         }
 
-        if (targetHash !== currentHash) {
-            updateRoute(`${targetPath}#${targetHash}`);
-        }
+        const full = targetHash ? `${targetPath}#${targetHash}` : targetPath;
+        updateRoute(full); // un seul push
     }
 }
 
 function elseNav({
-    currentPath,
-    targetPath,
     targetHash,
     currentHash,
-    updateRoute,
     handleScrollClick,
     scrollOffset,
 }: NavParams): void {
-    if (currentPath === targetPath) {
-        updateRoute(targetPath);
-
-        if (targetHash === undefined) {
-            handleScrollClick?.("top", scrollOffset);
-        } else if (targetHash !== currentHash) {
-            handleScrollClick?.(targetHash, scrollOffset);
-            updateRoute(`${targetPath}#${targetHash}`);
-        } else if (targetHash === currentHash) {
-            updateRoute(`${targetPath}#${targetHash}`);
-        }
+    if (targetHash === undefined) {
+        handleScrollClick?.("top");
+    } else if (targetHash !== currentHash) {
+        handleScrollClick?.(targetHash, scrollOffset);
+        console.log("targetHash !== currentHash");
+    } else if (targetHash === currentHash) {
+        // updateRoute(`${targetPath}#${targetHash}`);
+        handleScrollClick?.(targetHash, scrollOffset);
+        console.log("targetHash === currentHash");
     }
 }
 
@@ -125,7 +134,8 @@ export function scrollInView(sections: { id: string }[]) {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.offsetHeight;
             const isInView =
-                scrollPosition >= sectionTop - 100 && scrollPosition < sectionTop + sectionHeight;
+                scrollPosition >= sectionTop - 100 &&
+                scrollPosition < sectionTop + sectionHeight;
             if (isInView) {
                 currentSectionId = id;
             }

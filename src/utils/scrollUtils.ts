@@ -14,39 +14,77 @@ import type { MenuItem, SubItem } from "@assets/data/interfaces/menu";
 
 /**
  * Détermine l'offset de défilement à appliquer.
- * Priorité : MenuItem > SubItem > 0.
+ * Priorité : SubItem > MenuItem > 0.
  */
 export function resolveScrollOffset(
     menuItem?: Pick<MenuItem, "scrollOffset">,
     subItem?: Pick<SubItem, "scrollOffset">
 ): number {
-    if (typeof menuItem?.scrollOffset === "number") {
+    if (typeof subItem?.scrollOffset === "number") return subItem.scrollOffset;
+    if (typeof menuItem?.scrollOffset === "number")
         return menuItem.scrollOffset;
-    }
-    if (typeof subItem?.scrollOffset === "number") {
-        return subItem.scrollOffset;
-    }
     return 0;
 }
+const SCROLL_INTENT_KEY = "__SCROLL_INTENT__";
 /*-------------------------------------------------------*/
+function popScrollIntent(): { id: string; offset: number } | null {
+    const raw = sessionStorage.getItem(SCROLL_INTENT_KEY);
+    if (!raw) return null;
+    sessionStorage.removeItem(SCROLL_INTENT_KEY);
+    try {
+        return JSON.parse(raw) as { id: string; offset: number };
+    } catch {
+        return null;
+    }
+}
 export const useInitialScroll = (pathname: string | null) => {
     useEffect(() => {
-        if (window.location.hash) {
-            window.scrollTo({ top: 0 });
+        const allItems = [
+            ...menuItems.mainLink,
+            ...(menuItems.reservation ?? []),
+            ...(menuItems.search ?? []),
+            ...(menuItems.connection ?? []),
+        ];
+        const menuItem = allItems.find((item) => item.path === pathname);
+
+        const run = () => {
+            // 1) Priorité à l’intention cross-page (id + offset)
+            const intent = popScrollIntent();
+            if (intent) {
+                requestAnimationFrame(() =>
+                    requestAnimationFrame(() =>
+                        handleScrollClick(intent.id, intent.offset)
+                    )
+                );
+                return;
+            }
+
+            // 2) Sinon, hash direct (offset calculé menu/submenu)
             const hashWithSharp = window.location.hash;
-            const hash = hashWithSharp.substring(1);
-            const allItems = [
-                ...menuItems.mainLink,
-                ...(menuItems.reservation ?? []),
-                ...(menuItems.search ?? []),
-                ...(menuItems.connection ?? []),
-            ];
-            const menuItem = allItems.find((item) => item.path === pathname);
-            const subItem = menuItem?.subItems?.find((s) => s.AnchorId === hashWithSharp);
-            const offset = resolveScrollOffset(menuItem, subItem);
-            handleScrollClick(hash, offset);
+            if (hashWithSharp) {
+                const hash = hashWithSharp.substring(1);
+                if (hash === "top") {
+                    window.scrollTo({ top: 0 });
+                    return;
+                }
+                const subItem = menuItem?.subItems?.find(
+                    (s) => s.AnchorId === hashWithSharp
+                );
+                const offset = resolveScrollOffset(menuItem, subItem);
+                requestAnimationFrame(() =>
+                    requestAnimationFrame(() => handleScrollClick(hash, offset))
+                );
+            }
+        };
+
+        // Arrivée initiale + changements de hash sur la même page
+        if (typeof window !== "undefined") {
+            window.scrollTo({ top: 0 });
+            run();
+            resetActiveMenuClasses();
+            window.addEventListener("hashchange", run);
+            return () => window.removeEventListener("hashchange", run);
         }
-        resetActiveMenuClasses();
     }, [pathname]);
 };
 
