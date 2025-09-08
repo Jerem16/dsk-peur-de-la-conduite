@@ -38,8 +38,14 @@ const Header: React.FC<NavProps> = () => {
     useResize(setTabletMain, setOpenMainButton, setOpenButton, setBigMenu);
 
     // Wrapper pour adapter `handleNavClick`
-    const handleNavigationClick = (path: string, scrollOffset = 0) => {
-        handleNavClick(path, currentRoute, updateRoute, handleScrollClick, scrollOffset);
+    const handleNavigationClick = (path: string, scrollOffset = null) => {
+        handleNavClick(
+            path,
+            currentRoute,
+            updateRoute,
+            handleScrollClick,
+            scrollOffset
+        );
     };
 
     const updatedMenuItems = updateMenuClasses(

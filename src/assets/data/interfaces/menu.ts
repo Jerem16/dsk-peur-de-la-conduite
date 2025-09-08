@@ -6,7 +6,7 @@ export interface SubItem {
     path?: string;
     AnchorId: string;
     class: string;
-    scrollOffset?: number;
+    scrollOffset?: number | null;
     content?: Content[]; // Changez ReactNode à Content[]
 }
 
@@ -19,7 +19,7 @@ export interface MenuItem {
     svg: string;
     subItems?: SubItem[];
     AnchorId?: string;
-    scrollOffset?: number;
+    scrollOffset?: number | null;
     content?: string | React.ReactNode; // Même chose pour le menu, si c'est du texte ou JSX
 }
 
