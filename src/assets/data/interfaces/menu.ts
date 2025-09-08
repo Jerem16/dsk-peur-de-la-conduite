@@ -19,7 +19,7 @@ export interface MenuItem {
     svg: string;
     subItems?: SubItem[];
     AnchorId?: string;
-    scrollOffset?: number | null;
+    scrollOffset?: number;
     content?: string | React.ReactNode; // Même chose pour le menu, si c'est du texte ou JSX
 }
 
