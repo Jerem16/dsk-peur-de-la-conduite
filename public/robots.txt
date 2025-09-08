@@ -161,7 +161,7 @@ Disallow: /*/error
 #     Si vous souhaitez que Googlebot charge vos fonts/JS/CSS, commentez ces lignes :
 # Disallow: /_next/static/media/
 # Disallow: /_next/static/chunks/
-# Disallow: /dsk-peur-de-la-conduite/img/
+# Disallow: /img/
 # Disallow: /css/
 
 # Inclure le sitemap de la version mobile

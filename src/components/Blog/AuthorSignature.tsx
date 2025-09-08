@@ -7,7 +7,7 @@ interface AuthorSignatureProps {
     date: string | Date;
     className?: string;
 }
-const ava = "/dsk-peur-de-la-conduite/img/about/avatar.webp";
+const ava = "/img/about/avatar.webp";
 const formatDate = (date: string | Date) => {
     try {
         return new Date(date).toLocaleDateString("fr-FR", {

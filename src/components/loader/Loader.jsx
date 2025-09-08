@@ -6,7 +6,7 @@ const Loader = () => {
             <div className="ld-circleBG"></div>
             <div className="ld-frame">
                 <Image
-                    src="/dsk-peur-de-la-conduite/img/retroviseur.svg"
+                    src="/img/retroviseur.svg"
                     alt="loader"
                     width={225}
                     height={225}

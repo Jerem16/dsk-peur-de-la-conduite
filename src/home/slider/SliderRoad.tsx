@@ -1,5 +1,5 @@
 import React from "react";
-import { sliderContent } from "@assets/data/content/slider";
+import { sliderContent } from "../../assets/data/content/slider";
 import SliderNumber from "./svg/SliderNumber";
 
 interface SliderRoadProps {
@@ -11,21 +11,21 @@ const SliderRoad: React.FC<SliderRoadProps> = ({ currentSlide }) => {
         <div className="sld-container">
             <img
                 className="sld-road"
-                src="/dsk-peur-de-la-conduite/img/slider/slider-road.svg"
+                src="/img/slider/slider-road.svg"
                 alt="Slider Road Background"
                 width="1635"
                 height="528"
             />
             <img
                 className="sld-road-med"
-                src="/dsk-peur-de-la-conduite/img/slider/slider-road-medium.svg"
+                src="/img/slider/slider-road-medium.svg"
                 alt="Slider Road Background"
                 width="1635"
                 height="528"
             />
             <img
                 className="sld-flag"
-                src="/dsk-peur-de-la-conduite/img/slider/flag.svg"
+                src="/img/slider/flag.svg"
                 alt="Slider Road Background"
                 width="1635"
                 height="528"

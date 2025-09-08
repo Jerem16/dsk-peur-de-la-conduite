@@ -1,18 +1,51 @@
-// next.config.ts
-const isProd = process.env.NODE_ENV === "production";
-const repo = "dsk-peur-de-la-conduite"; // ← ton nom de repo
+import type { NextConfig } from "next";
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-    // Export statique (GitHub Pages ne sait servir que des fichiers)
-    output: "export",
-    // Évite les 404 en deep-link (GH Pages sert index.html par dossier)
-    trailingSlash: true,
-    // Désactive l'optimisation d'image côté serveur
-    images: { unoptimized: true },
-    // Nécessaire pour Project Pages (URL de type /<repo>/...)
-    basePath: isProd ? `/${repo}` : "",
-    assetPrefix: isProd ? `/${repo}/` : "",
+const nextConfig: NextConfig = {
+    experimental: {},
+
+    typescript: {
+        // !! WARN !!
+        // Dangerously allow production builds to successfully complete even if
+        // your project has type errors.
+        // !! WARN !!
+        // ignoreBuildErrors: true,
+    },
+
+    images: {
+        // augmente la mise en cache par défaut du loader next/image
+        minimumCacheTTL: 60 * 60 * 24 * 365, // 365 jours
+    },
+
+    async headers() {
+        return [
+            // Fichiers JS/CSS/JSON générés par Next (hashés)
+            //   {
+            //     source: "/_next/static/:path*",
+            //     headers: [
+            //       { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
+            //     ],
+            //   },
+
+            // CSS “manuellement” dans /css
+            //   {
+            //     source: "/css/:path*",
+            //     headers: [
+            //       { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
+            //     ],
+            //   },
+
+            // SVG, ICO, etc. dans /img et /services
+            {
+                source: "/img/:path*",
+                headers: [
+                    {
+                        key: "Cache-Control",
+                        value: "public, max-age=31536000, immutable",
+                    },
+                ],
+            },
+        ];
+    },
 };
 
 export default nextConfig;

@@ -7,7 +7,7 @@ import { useSlideRefParam } from "./useSlideRefParam";
 import { useScrollListener } from "./useScrollListener";
 import { useAutoSlide } from "./useAutoSlide";
 import { classGetter } from "./fnSliderContext";
-
+import { createUseContext } from "../utils/createUseContext";
 interface SliderContextType {
     currentSlide: number;
     nextSlide: () => void;
@@ -62,3 +62,4 @@ export const SliderProvider = ({ children }: { children: ReactNode }) => {
         </SliderContext.Provider>
     );
 };
+export const useSlider = createUseContext(SliderContext, "useSlider");

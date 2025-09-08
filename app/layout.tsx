@@ -6,11 +6,11 @@ import { DrivingProvider } from "../src/utils/context/DrivingContext";
 import { SearchProvider } from "../src/utils/context/SearchContext";
 import { Suspense } from "react";
 import HeaderProps from "./headerProps";
-import { ScrollProvider } from "../src/utils/context/ScrollContext";
+import ScrollProvider from "../src/utils/context/ScrollContext";
 import ScrollSectionsWrapper from "./ScrollSectionsWrapper";
 import Footer from "../src/components/footer/footer";
 import Loader from "@/src/components/loader/Loader";
-import MobileRedirect from "./MobileRedirect";
+// import MobileRedirect from "./MobileRedirect";
 
 export const RobotoFlex = localFont({
     src: "/fonts/RobotoFlex.woff2",
@@ -42,11 +42,7 @@ export default function RootLayout({
     return (
         <html lang="fr-FR">
             <head>
-                <link
-                    rel="preload"
-                    href="/dsk-peur-de-la-conduite/img/retroviseur.svg"
-                    as="image"
-                />
+                <link rel="preload" href="/img/retroviseur.svg" as="image" />
                 <link
                     rel="alternate"
                     media="only screen and (max-width: 640px)"
@@ -59,11 +55,7 @@ export default function RootLayout({
                     href="/css/desktopDefer.css"
                     fetchPriority="low"
                 />
-                <link
-                    rel="preload"
-                    href="/dsk-peur-de-la-conduite/img/retroviseur.svg"
-                    as="image"
-                />
+                <link rel="preload" href="/img/retroviseur.svg" as="image" />
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{
@@ -72,9 +64,7 @@ export default function RootLayout({
                             "@type": "ProfessionalService",
                             "@id": "https://www.peur-de-la-conduite.fr/",
                             name: "Peur de la conduite - Coaching Auto",
-                            image: [
-                                "/dsk-peur-de-la-conduite/img/about/avatar.webp",
-                            ],
+                            image: ["/img/about/avatar.webp"],
                             url: "https://www.peur-de-la-conduite.fr/",
                             telephone: "+33 6 74 25 91 81",
                             email: "contact.peurdelaconduite@gmail.com",
@@ -144,7 +134,7 @@ export default function RootLayout({
                 className={`${RobotoFlex.variable} ${Montserrat.variable} ${Nunito.variable}`}
                 id="top"
             >
-                <MobileRedirect />
+                {/* <MobileRedirect /> */}
                 <ScrollProvider>
                     <ScrollSectionsWrapper>
                         <SearchProvider>

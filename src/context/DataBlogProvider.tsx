@@ -14,7 +14,7 @@ import type { BlogData } from "@src/types/blog";
 // ⚠️ remplace
 // const PUBLIC_DATA_URL = "/data/data.json";
 // par :
-const PUBLIC_DATA_URL = `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/dsk-peur-de-la-conduite/data/data.json`;
+const PUBLIC_DATA_URL = `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/data/data.json`;
 
 interface DataBlogContextProps {
     data: BlogData | null;

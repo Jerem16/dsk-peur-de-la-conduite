@@ -5,7 +5,7 @@ const ContactBackGround = () => {
     return (
         <Image
             className="contact-bg"
-            src="/dsk-peur-de-la-conduite/img/contact/bg-contact.svg"
+            src="/img/contact/bg-contact.svg"
             alt="Decorative background for contact section"
             width={1440}
             height={1587}
