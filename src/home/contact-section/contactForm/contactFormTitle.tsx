@@ -6,7 +6,7 @@ const ContactFormTitle = () => {
         <div className="form-title flx-c">
             <h2>Contact</h2>
             <Image
-                src="/dsk-peur-de-la-conduite/contact/icon/key.svg"
+                src="/dsk-peur-de-la-conduite/img/contact/icon/key.svg"
                 alt="announcement"
                 width={37}
                 height={32}

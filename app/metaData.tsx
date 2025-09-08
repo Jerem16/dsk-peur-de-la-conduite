@@ -27,7 +27,7 @@ const metadata: Metadata = {
         type: "website",
         images: [
             {
-                url: "/dsk-peur-de-la-conduite/about/avatar.webp",
+                url: "/dsk-peur-de-la-conduite/img/about/avatar.webp",
                 width: 225,
                 height: 225,
                 alt: "Mounir Bouakkaz, Enseignant de la conduite",
@@ -44,15 +44,15 @@ const metadata: Metadata = {
     icons: {
         apple: [
             {
-                url: "/dsk-peur-de-la-conduite/favicon/apple-touch-icon.png",
+                url: "/dsk-peur-de-la-conduite/img/favicon/apple-touch-icon.png",
             }, // 120x120
             {
-                url: "/dsk-peur-de-la-conduite/favicon/logo.svg",
+                url: "/dsk-peur-de-la-conduite/img/favicon/logo.svg",
                 sizes: "152x152",
                 type: "image/png",
             }, // iPad
             {
-                url: "/dsk-peur-de-la-conduite/favicon/logo.svg",
+                url: "/dsk-peur-de-la-conduite/img/favicon/logo.svg",
                 sizes: "180x180",
                 type: "image/png",
             }, // Retina
@@ -60,56 +60,56 @@ const metadata: Metadata = {
 
         icon: [
             {
-                url: "/dsk-peur-de-la-conduite/favicon/logo.svg",
+                url: "/dsk-peur-de-la-conduite/img/favicon/logo.svg",
                 type: "image/svg+xml",
             },
             {
-                url: "/dsk-peur-de-la-conduite/favicon/icons/favicon-16x16.png",
+                url: "/dsk-peur-de-la-conduite/img/favicon/icons/favicon-16x16.png",
                 sizes: "16x16",
                 type: "image/png",
             },
             {
-                url: "/dsk-peur-de-la-conduite/favicon/icons/favicon-32x32.png",
+                url: "/dsk-peur-de-la-conduite/img/favicon/icons/favicon-32x32.png",
                 sizes: "32x32",
                 type: "image/png",
             },
             {
-                url: "/dsk-peur-de-la-conduite/favicon/icons/android-chrome-192x192.png",
+                url: "/dsk-peur-de-la-conduite/img/favicon/icons/android-chrome-192x192.png",
                 sizes: "192x192",
                 type: "image/png",
             },
             {
-                url: "/dsk-peur-de-la-conduite/favicon/icons/android-chrome-512x512.png",
+                url: "/dsk-peur-de-la-conduite/img/favicon/icons/android-chrome-512x512.png",
                 sizes: "512x512",
                 type: "image/png",
             },
             {
-                url: "/dsk-peur-de-la-conduite/favicon/logo.svg",
+                url: "/dsk-peur-de-la-conduite/img/favicon/logo.svg",
                 sizes: "48x48",
                 type: "image/svg+xml",
             },
             {
-                url: "/dsk-peur-de-la-conduite/favicon/logo.svg",
+                url: "/dsk-peur-de-la-conduite/img/favicon/logo.svg",
                 sizes: "64x64",
                 type: "image/svg+xml",
             },
             {
-                url: "/dsk-peur-de-la-conduite/favicon/logo.svg",
+                url: "/dsk-peur-de-la-conduite/img/favicon/logo.svg",
                 sizes: "270x270",
                 type: "image/svg+xml",
             },
             {
-                url: "/dsk-peur-de-la-conduite/favicon/logo.svg",
+                url: "/dsk-peur-de-la-conduite/img/favicon/logo.svg",
                 sizes: "310x310",
                 type: "image/svg+xml",
             },
             {
-                url: "/dsk-peur-de-la-conduite/favicon/logo.svg",
+                url: "/dsk-peur-de-la-conduite/img/favicon/logo.svg",
                 sizes: "152x152",
                 type: "image/svg+xml",
             },
             {
-                url: "/dsk-peur-de-la-conduite/favicon/logo.svg",
+                url: "/dsk-peur-de-la-conduite/img/favicon/logo.svg",
                 sizes: "180x180",
                 type: "image/svg+xml",
             },

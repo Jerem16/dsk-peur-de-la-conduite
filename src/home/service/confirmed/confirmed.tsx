@@ -10,7 +10,7 @@ const Confirmed = () => {
         <div className="services content-wrapper content-srv" id="confirmed">
             <Image
                 className="road-confirmed"
-                src="/dsk-peur-de-la-conduite/services/road-confirmed.svg"
+                src="/dsk-peur-de-la-conduite/img/services/road-confirmed.svg"
                 alt={`Logo background`}
                 width={1706.7}
                 height={2596.4}
@@ -35,7 +35,7 @@ const Confirmed = () => {
                     <div className="aside-bg">
                         <Image
                             className="srv-aside-bg"
-                            src="/dsk-peur-de-la-conduite/services/aside-bg.svg"
+                            src="/dsk-peur-de-la-conduite/img/services/aside-bg.svg"
                             alt="Logo background"
                             width={360}
                             height={860}
@@ -55,7 +55,7 @@ const Confirmed = () => {
                         <div className="flx-c icon-description">
                             <Image
                                 className="srv-aside-bg"
-                                src="/dsk-peur-de-la-conduite/services/Trophy.svg"
+                                src="/dsk-peur-de-la-conduite/img/services/Trophy.svg"
                                 alt={`Logo Trophy`}
                                 width={1145}
                                 height={1145}

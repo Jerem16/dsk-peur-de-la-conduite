@@ -11,21 +11,21 @@ const SliderRoad: React.FC<SliderRoadProps> = ({ currentSlide }) => {
         <div className="sld-container">
             <img
                 className="sld-road"
-                src="/dsk-peur-de-la-conduite/slider/slider-road.svg"
+                src="/dsk-peur-de-la-conduite/img/slider/slider-road.svg"
                 alt="Slider Road Background"
                 width="1635"
                 height="528"
             />
             <img
                 className="sld-road-med"
-                src="/dsk-peur-de-la-conduite/slider/slider-road-medium.svg"
+                src="/dsk-peur-de-la-conduite/img/slider/slider-road-medium.svg"
                 alt="Slider Road Background"
                 width="1635"
                 height="528"
             />
             <img
                 className="sld-flag"
-                src="/dsk-peur-de-la-conduite/slider/flag.svg"
+                src="/dsk-peur-de-la-conduite/img/slider/flag.svg"
                 alt="Slider Road Background"
                 width="1635"
                 height="528"
